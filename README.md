@@ -77,7 +77,7 @@ The solution is plotted via some _beautiful_ ASCII art (not really beautiful, so
 ...
 ```
 
-The number of the pieces will also be printed out. Here for reference:
+The identifiers and shapes of the pieces will also be printed out. Here for reference:
 
 ```
 Piece 1: 28x6
