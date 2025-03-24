@@ -45,7 +45,6 @@ and improve performance for this type of packing problem.
 """
 
 import logging
-from copy import deepcopy
 
 import numpy as np
 
@@ -235,11 +234,12 @@ def fit_board(board, pieces, pbar=False):
             if try_piece_placement(board, piece, pieces, pbar):
                 return True
 
-            # Try rotated orientation
-            tpiece = deepcopy(piece)
-            tpiece.transpose()
-            if try_piece_placement(board, tpiece, pieces, pbar, transposed=True):
+            # Try rotated orientation - avoid deepcopy
+            piece.transpose()  # Rotate the piece
+            if try_piece_placement(board, piece, pieces, pbar, transposed=True):
+                piece.transpose()  # Restore original orientation
                 return True
+            piece.transpose()  # Restore original orientation if placement failed
 
     return False
 
