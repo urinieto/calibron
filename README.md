@@ -35,6 +35,18 @@ This implementation uses a backtracking algorithm with several optimizations:
 
 ## Running the Solver
 
+### Installation
+
+First, install the required dependencies (basically numpy):
+
+```bash
+pip install -r requirements.txt
+```
+
+### Execution
+
+Run the solver with:
+
 ```bash
 python calibron.py
 ```
