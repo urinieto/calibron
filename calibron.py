@@ -178,7 +178,7 @@ def try_piece_placement(board, piece, pieces, pbar=False, transposed=False):
         True if placement leads to a solution, False otherwise
     """
     if pbar:
-        transposed_mark = "(T) " if transposed else ""
+        transposed_mark = "(transposed) " if transposed else ""
         logging.info(
             f"Trying piece {piece.id} {transposed_mark}of {len(PIECE_SHAPES)}..."
         )
