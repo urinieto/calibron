@@ -2,6 +2,8 @@
 
 Simple implementation to solve the infamous Calibron-12 puzzle.
 
+With the optimizations in place, the solution should be found in just a couple of seconds on consumer-grade hardware.
+
 <img src="img/calibron12.jpg" alt="Calibron-12 Puzzle" width="500">
 
 ## About the Calibron-12 Puzzle
@@ -51,4 +53,6 @@ The worst-case time complexity is O(2^n * n!), where n is the number of pieces, 
 - [Calibron 12 Block Puzzle](https://en.wikipedia.org/wiki/Packing_problems)
 - [Packing Problems](https://en.wikipedia.org/wiki/Packing_problems)
 
+## Acknowledgements
 
+Special thanks to my sister who introduced me to this fascinating puzzle during our vacation in the rockies. I might have been obsessing a little bit with it since then ❤️
