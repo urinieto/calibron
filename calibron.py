@@ -16,6 +16,7 @@ Algorithm Steps:
    - Create an empty 56x56 board
    - Define 12 pieces with their respective dimensions
    - Verify total area of pieces equals board area
+   - Sort pieces by area (largest first) and perimeter to optimize placement
 
 2. Piece Placement Strategy
    - Always place pieces starting from the top-left empty position
@@ -38,8 +39,9 @@ Algorithm Steps:
 Time Complexity: O(2^n * n!), where n is the number of pieces
 Space Complexity: O(n), where n is the number of pieces (due to recursion stack)
 
-Note: This is a naive implementation that explores all possible combinations
-until a solution is found or all possibilities are exhausted.
+Note: This implementation prioritizes larger pieces first, as they are more
+difficult to place. This heuristic can significantly reduce the search space
+and improve performance for this type of packing problem.
 """
 
 import logging
@@ -242,14 +244,6 @@ def fit_board(board, pieces, pbar=False):
     return False
 
 
-def sort_pieces(pieces):
-    """Sort pieces by area (largest first) and perimeter to prioritize placement.
-
-    Larger pieces are harder to place, so placing them first reduces backtracking.
-    """
-    return sorted(pieces, key=lambda p: (-p.area, -(p.width + p.height)))
-
-
 def main():
     # Create board
     board = Board()
@@ -265,6 +259,9 @@ def main():
     assert sum([piece.area for piece in pieces]) == board.rows * board.cols, (
         "Pieces do not fit in the board"
     )
+
+    # Sort pieces by area (largest first)
+    pieces = sorted(pieces, key=lambda p: (-p.area, -(p.width + p.height)))
 
     # Fit board
     fit_board(board, pieces, pbar=True)
