@@ -53,6 +53,8 @@ python calibron.py
 
 The solver will attempt to find a valid solution and display it when found.
 
+Once the solution is found, it will print it via some _beautiful_ ASCII art (not really beautiful, sorry).
+
 ## Time Complexity
 
 The worst-case time complexity is O(2^n * n!), where n is the number of pieces, as:
