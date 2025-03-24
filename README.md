@@ -53,7 +53,7 @@ python calibron.py
 
 The solver will attempt to find a valid solution and display it when found.
 
-Once the solution is found, it will print it via some _beautiful_ ASCII art (not really beautiful, sorry).
+The solution is plotted via some _beautiful_ ASCII art (not really beautiful, sorry).
 
 ## Time Complexity
 
